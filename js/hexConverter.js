@@ -16,7 +16,7 @@ function converter(hexPartial) {
     }
   }
   let rgbPartial = partialArr[0]*16;
-  if (partialArr[1]) rgbPartial += parseInt(partialArr[1]);
+  rgbPartial += parseInt(partialArr[1] || partialArr[0]);
   return rgbPartial;
 }
 
