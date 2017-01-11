@@ -11,7 +11,7 @@ html, body {
   perspective: 50vw;
   perspective-origin: 50% 50%;
 }
-/*.controls {
+.controls {
   position: absolute;
   height: 160px;
   width: 40px;
@@ -51,7 +51,7 @@ html, body {
   content: '';
   display: block;
   margin-top: -12.5%;
-}*/
+}
 .static-display {
   position: absolute;
   top: 20px;

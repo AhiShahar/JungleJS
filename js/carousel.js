@@ -31,32 +31,8 @@ var duplicateSpinner = function () {
     $('.turn-right').removeClass('turn-left');
 };
 
-var paintPanes = function () {
-    $('.front-side').each(function (i, el) {
-        var $el = $(el);
-        var color = $(el).attr('data-bg');
-        $el.children().css('backgroundImage', 'url(' + translateHex(color) + ')');
-    });
-};
-
-var translateHex = function (hex) {
-    if (!canvas) {
-        canvas = document.createElement('canvas');
-        canvas.height = 1;
-        canvas.width = 1;
-    }
-    if (canvas.getContext) {
-        var ctx = canvas.getContext('2d');
-        ctx.fillStyle = hex;
-        ctx.fillRect(0, 0, 1, 1);
-        return canvas.toDataURL();
-    }
-    return false;
-};
-
 var prepareDom = function () {
     setIndexes();
-    paintPanes();
     duplicateSpinner();
     appendControls();
 };
@@ -169,7 +145,10 @@ $(document).ready(function () {
         if ( i === 0 ) {
             $(".front-side").addClass("js-active");
         }
+
+        var hexCode = '#'+(Math.floor(Math.random()*10))+''+(Math.floor(Math.random()*10))+''+(Math.floor(Math.random()*10))+''+(Math.floor(Math.random()*10))+''+(Math.floor(Math.random()*10))+''+(Math.floor(Math.random()*10));
         $('.content .static-left-window').last().css("background-image", 'url(' + newImage + ')');
+        $('.content .static-right-window').last().css("background", hexCode);
     }
     init();
 });
