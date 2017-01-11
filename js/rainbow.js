@@ -16,3 +16,11 @@ $.fn.rainbowText = function () {
         }
     }
 };
+
+randomHex = function() {
+  const result = []
+  for (var i = 0; i < 6; i++) {
+    result.push(Math.floor(Math.random() * 16).toString(16));
+  }
+  return "#" + result.join("");
+}

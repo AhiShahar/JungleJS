@@ -118,6 +118,14 @@ var init = function () {
     attachListeners();
 };
 
+randomHex = function() {
+  const result = [];
+  for (var i = 0; i < 6; i++) {
+    result.push(Math.floor(Math.random() * 16).toString(16));
+  }
+  return "#" + result.join("");
+};
+
 $(document).ready(function () {
 
     function createCarousel(){
@@ -146,7 +154,7 @@ $(document).ready(function () {
             $(".front-side").addClass("js-active");
         }
 
-        var hexCode = '#'+(Math.floor(Math.random()*10))+''+(Math.floor(Math.random()*10))+''+(Math.floor(Math.random()*10))+''+(Math.floor(Math.random()*10))+''+(Math.floor(Math.random()*10))+''+(Math.floor(Math.random()*10));
+        var hexCode = randomHex();
         $('.content .static-left-window').last().css("background-image", 'url(' + newImage + ')');
         $('.content .static-right-window').last().css("background", hexCode);
     }
