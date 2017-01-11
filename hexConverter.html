@@ -4,18 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>hex converter</title>
+  <link rel="stylesheet" href="css/grid.css">
   <link rel="stylesheet" href="css/hexConverter.css">
   <script src="js/jquery.js" ></script>
   <script src="js/hexConverter.js"></script>
 </head>
 <body>
+<div class="container">
+  <div class="col lg-col-2 md-col-1 sm-hide"></div>
+  <div class="col lg-col-8 md-col-10 sm-col-12">
 
-  <div class="container">
-    <input id="hex" type="text" placeholder="hex" autocomplete="off">
-    <input id="opacity" type="range" min="0" max="1" step="0.01" value="1">
-    <input id="rgba" type="text" placeholder="rgba" autocomplete="off">
+    <div class="col lg-col-5 md-col-5 sm-col-12">
+      <input id="hex" type="text" placeholder="hex" autocomplete="off">
+    </div>
+    <div class="col lg-col-2 md-col-2 sm-col-12">
+      <input class="range" id="opacity" type="range" min="0" max="1" step="0.01" value="1">
+    </div>
+    <div class="col lg-col-5 md-col-5 sm-col-12">
+      <input id="rgba" type="text" placeholder="rgba" autocomplete="off">
+    </div>
+
   </div>
-
+  <div class="col lg-col-2 md-col-1 sm-hide"></div>
+</div>
 
 </body>
 </html>

@@ -1,8 +1,4 @@
 .container {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
-
   /* Pay attention to floated elements */
   overflow: auto;
 }
@@ -12,8 +8,7 @@
 }
 
 .col {
-  min-height: 100px;
-  border: 2px inset lightslategrey;
+  min-height: 1px;
   float: left;
 }
 
