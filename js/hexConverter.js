@@ -50,7 +50,7 @@ $(document).ready(function() {
     const inputValue = $("#hex").val();
     if ( inputValue.length === 3 || inputValue.length === 6) {
       const converted = breakAndRebuild(inputValue);
-      if (converted === "You're an idiot") return $("#rgb").val(converted);
+      if (converted === "You're an idiot") return $("#rgba").val(converted);
       const opacity = $("#opacity").val()
       const cssTemplate = `rgba(${converted},${opacity})`;
       $("body").css("background", cssTemplate);
