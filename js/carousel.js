@@ -118,6 +118,7 @@ var init = function () {
     attachListeners();
 };
 
+<<<<<<< HEAD
 randomHex = function() {
   const result = [];
   for (var i = 0; i < 6; i++) {
@@ -125,13 +126,15 @@ randomHex = function() {
   }
   return "#" + result.join("");
 };
+=======
+function createCarousel(){
+    var newCarousel = $('<div class="controls"></div><div class="static-display"><div class="spinner spinner--left"></div></div>');
+    $('.carousel').append(newCarousel);
+}
+>>>>>>> 077141c5da03c2a9f66ec9560cd5827d32ef06ec
 
 $(document).ready(function () {
 
-    function createCarousel(){
-        var newCarousel = $('<div class="controls"></div><div class="static-display"><div class="spinner spinner--left"></div></div>');
-        $('.carousel').append(newCarousel);
-    }
     createCarousel();
 
     var paragraphs = $(".static-context");
