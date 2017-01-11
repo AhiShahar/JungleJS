@@ -1,12 +1,13 @@
-$.fn.particalize = function (time) {
+$.fn.particalize = function (time, colorRange) {
+    if (colorRange === void 0) { colorRange = ["#468966", "#FFF0A5", "#FFB03B", "#B64926", "#8E2800"]; }
     var words = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        words[_i - 1] = arguments[_i];
+    for (var _i = 2; _i < arguments.length; _i++) {
+        words[_i - 2] = arguments[_i];
     }
     var canvas = document.querySelector("#scene"), ctx = canvas.getContext("2d"), particles = [], amount = 0, mouse = { x: 0, y: 0 }, radius;
     window.innerWidth < 750 ? radius = 1 : radius = 3;
-    var colors = ["#468966", "#FFF0A5", "#FFB03B", "#B64926", "#8E2800"];
     var copy = words.slice();
+    var colors = colorRange;
     var ww = canvas.width = window.innerWidth;
     var wh = canvas.height = window.innerHeight;
     function Particle(x, y) {
