@@ -45,22 +45,33 @@ function breakAndRebuild(hex) {
 
 $(document).ready(function() {
 
+  // a function that will be called by event listeners, to check input values and proccess them
+  function doMagic() {
+    const inputValue = $("#hex").val();
+    if ( inputValue.length === 3 || inputValue.length === 6) {
+      const converted = breakAndRebuild(inputValue);
+      if (converted === "You're an idiot") return $("#rgb").val(converted);
+      const opacity = $("#opacity").val()
+      const cssTemplate = `rgba(${converted},${opacity})`;
+      $("body").css("background", cssTemplate);
+      $("#rgba").val(cssTemplate);
+    }
+  }
+
   // Add transition to the background
   $("body").css("transition", "background 0.5s");
 
   // Save the input node
   const inputHex = $("#hex");
 
-  // add event listener, on KEYUP test for length and proceed
+  // add event listener on KEYUP
   inputHex.on("keyup", function(){
-    const inputValue = $("#hex").val();
-    if ( inputValue.length === 3 || inputValue.length === 6) {
-      const converted = breakAndRebuild(inputValue);
-      if (converted === "You're an idiot") return $("#rgb").val(converted);
-      const cssTemplate = `rgba(${converted},1)`;
-      $("body").css("background", `#${inputValue}`);
-      $("#rgb").val(cssTemplate);
-    }
+    doMagic();
+  });
+
+  const opacity = $("input");
+  opacity.on("input", function () {
+    doMagic();
   });
 
 });
