@@ -118,12 +118,13 @@ var init = function () {
     attachListeners();
 };
 
+function createCarousel(){
+    var newCarousel = $('<div class="controls"></div><div class="static-display"><div class="spinner spinner--left"></div></div>');
+    $('.carousel').append(newCarousel);
+}
+
 $(document).ready(function () {
 
-    function createCarousel(){
-        var newCarousel = $('<div class="controls"></div><div class="static-display"><div class="spinner spinner--left"></div></div>');
-        $('.carousel').append(newCarousel);
-    }
     createCarousel();
 
     var paragraphs = $(".static-context");
