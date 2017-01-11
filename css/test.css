@@ -1,0 +1,17 @@
+body {
+  background-color: black;
+}
+nav {
+  background-color: black;
+  width: 100vw;
+  height: 8vh;
+  z-index: 10000000;
+}
+.carousel {
+  height: 60vh;
+  /*transform: scale(0.9);*/
+}
+
+.container {
+  margin: 0 auto;
+}
