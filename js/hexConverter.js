@@ -74,4 +74,9 @@ $(document).ready(function() {
     doMagic();
   });
 
+  $("#colorPick").on("input", function() {
+    inputHex.val(Math.round(this.value).toString(16));
+  });
+
+
 });
