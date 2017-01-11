@@ -59,7 +59,7 @@ $(document).ready(function() {
   }
 
   // Add transition to the background
-  $("body").css("transition", "background 0.5s");
+  $("body").css("transition", "background 0.2s");
 
   // Save the input node
   const inputHex = $("#hex");
