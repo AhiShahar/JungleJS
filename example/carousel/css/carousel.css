@@ -1,5 +1,6 @@
 html, body {
   margin: 0;
+  max-height: 100vh;
 }
 .js-transitions-disabled * {
   transition: none !important;
@@ -53,7 +54,8 @@ html, body {
   margin-top: -12.5%;
 }
 .static-display {
-  position: absolute;
+  position: relative;
+  display: inline-block;
   top: 20px;
   bottom: 20px;
   left: 20px;
@@ -63,7 +65,8 @@ html, body {
   transform: translateZ(calc(-50vh + 20px));
 }
 .spinner {
-  position: absolute;
+  position: relative;
+  display: inline-block;
   width: calc(50vw - (20px));
   height: calc(100vh - 40px);
   top: 0;
@@ -116,11 +119,12 @@ html, body {
 }
 .js-active {
   display: block;
+  background-color: white;
   transform: translateZ(calc(50vh - 20px));
 }
 .content {
-  position: absolute;
-  width: 200%;
+  position: relative;
+  display: inline-block;  width: 200%;
   height: 100%;
   left: 0;
 }
@@ -140,8 +144,9 @@ html, body {
   left: auto;
 }
 .static-left-window {
-  background-repeat: no-repeat;
-  background-size: cover;
+  /*background-repeat: no-repeat;*/
+  /*background-size: contain;*/
+  /*background-position: center;*/
 }
 .static-left-window:after {
   position: absolute;

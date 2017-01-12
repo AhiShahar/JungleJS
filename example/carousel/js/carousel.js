@@ -157,7 +157,9 @@ $(document).ready(function () {
         }
 
         var hexCode = randomHex();
-        $('.content .static-left-window').last().css("background-image", 'url(' + newImage + ')');
+        $('.content .static-left-window').last().css({"background": hexCode, "background-size": "contain", "background-image": 'url(' + newImage + ')', "background-repeat": "no-repeat", "background-position": "center"});
+        // $('.content .static-left-window').last().css("background-size", "contain");
+        // $('.content .static-left-window').last().css("background-image", 'url(' + newImage + ')');
         $('.content .static-right-window').last().css("background", hexCode);
     }
     init();
