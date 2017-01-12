@@ -1,18 +1,22 @@
+/* LEGEND */
+/* lg - Large desktop sized device */
+/* md - Medium tablet sized device */
+/* sm - Small mobile sized device */
+
+/* GRID LAYOUT*/
 .container {
   /* Pay attention to floated elements */
   overflow: auto;
 }
 
-.row {
-  /* TODO:  */
-}
-
+/* Make sure that columns sit together */
 .col {
   min-height: 1px;
   float: left;
 }
-
+/* DESKTOP GRID*/
 @media (min-width: 1281px) {
+  /* Column sizing on a 12 grid layout */
   .lg-col-1 {
     width: 8.3333333%;
     width: -webkit-calc(100%/12);
@@ -106,8 +110,9 @@
     width: 100%;
   }
 }
-
+/* TABLET GRID*/
 @media (min-width: 721px) and (max-width: 1280px) {
+  /* Column sizing on a 12 grid layout */
   .md-col-1 {
     width: 8.3333333%;
     width: -webkit-calc(100%/12);
@@ -201,8 +206,9 @@
     width: 100%;
   }
 }
-
+/* MOBILE GRID*/
 @media (max-width: 720px) {
+  /* Column sizing on a 12 grid layout */
   .sm-col-1 {
     width: 8.3333333%;
     width: -webkit-calc(100%/12);
