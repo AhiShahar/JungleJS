@@ -44,39 +44,41 @@ function breakAndRebuild(hex) {
 
 
 $(document).ready(function() {
+  // Save the input node
+  const inputHex = $("#hex");
 
   // a function that will be called by event listeners, to check input values and proccess them
-  function doMagic() {
-    const inputValue = $("#hex").val();
+  function doMagic(value) {
+    const inputValue = value;
     if ( inputValue.length === 3 || inputValue.length === 6) {
       const converted = breakAndRebuild(inputValue);
       if (converted === "You're an idiot") return $("#rgba").val(converted);
-      const opacity = $("#opacity").val()
+      const opacity = $("#opacity").val();
       const cssTemplate = `rgba(${converted},${opacity})`;
       $("body").css("background", cssTemplate);
       $("#rgba").val(cssTemplate);
+      inputHex.val(inputValue);
     }
   }
 
   // Add transition to the background
-  $("body").css("transition", "background 0.2s");
-
-  // Save the input node
-  const inputHex = $("#hex");
+  $("body").css("transition", "background 0.35s");
 
   // add event listener on KEYUP
   inputHex.on("keyup", function(){
-    doMagic();
+    const value = $("#hex").val();
+    doMagic(value);
   });
 
   const opacity = $("input");
   opacity.on("input", function () {
-    doMagic();
+    const inputValue = $("#hex").val();
+    doMagic(inputValue);
   });
 
-  $("#colorPick").on("input", function() {
-    inputHex.val(Math.round(this.value).toString(16));
-  });
-
+    $("#colorPick").on("input", function() {
+      console.log(Math.round(this.value).toString(16));
+      doMagic(Math.round(this.value).toString(16))
+    });
 
 });
