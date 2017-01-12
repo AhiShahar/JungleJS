@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../js/jquery.js"></script>
+  <script src="../js/rainbow.js"></script>
+  <title>Document</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+    h1 {
+      text-align: center;
+      position: relative;
+      top: 50%;
+      transition: 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <h1>random hex</h1>
+  <img src="./jungle.png" alt="">
+  <script>
+    document.addEventListener("keydown", function(e) {
+      if (e.code == "Space") {
+        document.querySelector("h1").innerText = randomHex();
+        document.body.style.background = randomHex();
+      }
+    })
+
+    document.addEventListener("mousemove", function(e) {
+      const hexString = e.clientY / window.innerHeight * 255;
+      const satString = e.clientX / window.innerWidth * 100;
+      const text = document.querySelector("h1")
+
+      if (e.clientX < window.innerWidth / 2) {
+        text.style.color = `white`
+      }
+      if (e.clientX > window.innerWidth / 2) {
+        text.style.color = "black"
+      }
+      text.innerText = `rgb(${hslToRgb(hexString/255, satString/100, satString/100)})`;
+      document.body.style.background = `hsl(${hexString} ,${satString}% ,${satString}%)`
+    })
+
+  </script>
+</body>
+</html>
