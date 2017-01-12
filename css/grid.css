@@ -3,6 +3,78 @@
 /* md - Medium tablet sized device */
 /* sm - Small mobile sized device */
 
+/* TYPOGRAPHY */
+/* Default HTML font size */
+html {
+  font-size: 60%;
+}
+/* Default text styles */
+body {
+  font-size: 1.5rem;
+  font-family: arial, sans-serif;
+  color: #242424;
+  line-height: 1.8;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  line-height: 1
+}
+
+h1 { font-size: 4rem; }
+h2 { font-size: 3.6rem; }
+h3 { font-size: 3.0rem; }
+h4 { font-size: 2.4rem; }
+h5 { font-size: 1.8rem; }
+h6 { font-size: 1.5rem; }
+
+/* LINKS */
+
+a { color: #2A5DB0; }
+a:hover { color: #2b4b80; }
+
+/* BUTTONS */
+/* Default button styling */
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  cursor: pointer;
+  padding: 0 30px;
+  line-height: 38px;
+  text-transform: uppercase;
+  font-weight: 700;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+  background: transparent;
+  border: 1px solid #777
+}
+/* Primary button styling */
+button.primary,
+input[type="submit"].primary,
+input[type="reset"].primary,
+input[type="button"].primary {
+  color: #fff;
+  background: #226fbe;
+  border: 1px solid #226fbe;
+}
+
+button.primary:hover,
+input[type="submit"].primary:hover,
+input[type="reset"].primary:hover,
+input[type="button"].primary:hover {
+  background: transparent;
+  color: #226fbe;
+}
+
 /* GRID LAYOUT*/
 .container {
   /* Pay attention to floated elements */
