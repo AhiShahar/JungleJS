@@ -48,8 +48,7 @@ $(document).ready(function() {
   const inputHex = $("#hex");
 
   // a function that will be called by event listeners, to check input values and proccess them
-  function doMagic(value) {
-    const inputValue = value;
+  function doMagic(inputValue) {
     if ( inputValue.length === 3 || inputValue.length === 6) {
       const converted = breakAndRebuild(inputValue);
       if (converted === "You're an idiot") return $("#rgba").val(converted);
@@ -77,7 +76,6 @@ $(document).ready(function() {
   });
 
     $("#colorPick").on("input", function() {
-      console.log(Math.round(this.value).toString(16));
       doMagic(Math.round(this.value).toString(16))
     });
 
